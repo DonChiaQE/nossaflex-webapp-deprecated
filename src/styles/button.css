@@ -1,5 +1,8 @@
 .button-style {
-    border-color: var(--text-color);
-    background-color: var(--background);
+  border-color: var(--text-color);
+  background-color: var(--background);
+}
 
-  }
+.text-highlight {
+  text-shadow: #FC0 1px 0 10px;
+}

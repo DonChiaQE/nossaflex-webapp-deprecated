@@ -1,10 +1,10 @@
 import './App.css';
-import SignUp from './components/signup';
-import "@zaydek/duomo"
+import Login from './components/login';
+
 
 function App() {
     return (
-		<SignUp />
+		<Login />
 	)
 }
 

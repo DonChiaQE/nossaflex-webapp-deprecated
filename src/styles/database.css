@@ -1,0 +1,20 @@
+th, td {
+    padding: 10px;
+}
+
+tbody {
+    box-shadow: 0px 0px 0px 1px rgb(0, 0, 0);
+}
+
+table {
+    border-radius: 5px;
+    border-collapse: separate !important;  
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}

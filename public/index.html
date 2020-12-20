@@ -3,6 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/@zaydek/duomo@0.7.6/dist/prod-full.css">
+    <script src="http://unpkg.com/@zaydek/duomo@0.7.6/dist/browser"></script>
+    <script>
+        // You can now press `d` to toggle debug mode and
+        // `ctrl-d` to toggle dark mode.
+        window.Duomo.init("development")
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -40,4 +47,25 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <style>
+    :root {
+        --background: #F6F5F1;
+        --grid-color: #D2E4EE;
+        --text-color: #433E40;
+        --green-highlight: #BAE4D9;
+        --pink-highlight: #F3C4CF;
+        --purple-highlight: #AFAAC6;
+        --yellow-highlight: #F7E5A6;
+        --red-highlight: #D99B9D;
+        --blue-highlight: #A0CADD;
+    }
+
+    body {
+      background-color: var(--background);
+      background-size: 40px 40px;
+      background-image:
+        linear-gradient(to right, var(--grid-color) 0.5px, transparent 0.5px),
+        linear-gradient(to bottom, var(--grid-color) 0.5px, transparent 0.5px);
+    }
+  </style>
 </html>

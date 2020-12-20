@@ -1,9 +1,8 @@
-import "@zaydek/duomo"
+
 import React from "react";
 import Button from "./buttons";
 import "../styles/colors.css";
 import "../styles/login.css";
-import useMethods from 'use-methods';
 
 const app = {
 	initialState: {
@@ -22,17 +21,17 @@ const app = {
 
 function Login() {
     return (
-        <div id="duomo-root" className="vstack background grid-color space-12">
-            <div className="black text-64 text-color">nossaflex. db</div>
+        <div id="duomo-root" className="vstack space-12">
+            <div className="text-64 text-color weight-900">nossaflex. db</div>
             <form className="vstack w-448 align-start space-16 border-1 border-black rounded-5 px-16 py-24 background">
                 
                     <div className="vstack space-4 align-start">
-                        <div className="thin text-14 px-4 text-color">email.</div>
-                        <input type="text" className="light text-18 background px-4 text-color textfield" placeholder="enter email"/>
+                        <div className="weight-200 text-14 px-4 text-color">email.</div>
+                        <input type="text" className="weight-300 text-18 background px-4 text-color textfield" placeholder="enter email"/>
                     </div>
                     <div className="vstack space-4 align-start">
-                        <div className="thin text-14 px-4 text-color">password.</div>
-                        <input type="text" className="light text-18 background px-4 text-color textfield" placeholder="password"/>
+                        <div className="weight-200 text-14 px-4 text-color">password.</div>
+                        <input type="text" className="weight-300 text-18 background px-4 text-color textfield" placeholder="password"/>
                     </div>
                 
             </form>
