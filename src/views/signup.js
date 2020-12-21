@@ -4,7 +4,7 @@ import Button from "../components/buttons";
 import "../styles/colors.css";
 import "../styles/login.css";
 import useMethods from 'use-methods';
-import { BrowserRouter as Link, Router, Switch, Route, Redirect } from "react-router-dom"
+import { BrowserRouter as Link } from "react-router-dom"
 
 const app = {
 	initialState: {
@@ -57,7 +57,7 @@ function SignUp() {
             <div className="vstack space-12 align-start  w-448">
                 <Button buttonText="log in." highlightColor="var(--pink-highlight)"/>
                 <Button buttonText="log in with google." highlightColor="var(--blue-highlight)"/>
-                <div className="text-color light">Already have an account? <Link to="/login">Login</Link></div>
+                <div className="text-color light">Already have an account? <Link to="/login"><div>Login</div></Link></div>
             </div>
         </div>
 	)

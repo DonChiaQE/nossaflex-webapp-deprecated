@@ -1,13 +1,6 @@
 import './App.css';
 import Database from './views/database';
-import {
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	Link,
-	useRouteMatch,
-	useParams
-  } from "react-router-dom";
+import { BrowserRouter as Link, Router, Switch, Route, Redirect } from "react-router-dom"
 import Login from './views/login';
 import SignUp from './views/signup';
 
