@@ -1,11 +1,28 @@
 import './App.css';
-import Login from './components/login';
+import Database from './views/database';
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Link,
+	useRouteMatch,
+	useParams
+  } from "react-router-dom";
+import Login from './views/login';
+import SignUp from './views/signup';
 
-
-function App() {
+export default function App() {
     return (
-		<Login />
+		<Router>
+			<Switch>
+			<Route path="/signup">
+					<SignUp />
+				</Route>
+				<Route path="/">
+					<Login />
+				</Route>
+			</Switch>
+		</Router>
 	)
 }
 
-export default App;

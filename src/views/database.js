@@ -1,6 +1,6 @@
 
 import React from "react";
-import Button from "./buttons";
+import Button from "../components/buttons";
 import "../styles/colors.css";
 import "../styles/database.css";
 import useMethods from 'use-methods';
@@ -15,9 +15,11 @@ const app = {
 
 function Database() {
     return (
-        <div className="vstack background grid-color space-8 container">
-            <div className="text-64 text-color weight-900">nossaflex. db</div>
-            <div className="weight-200 text-24 text-color">Welcome, Josh</div>
+        <div className="vstack background grid-color space-8 container ">
+            <div className="vstack align-start w-full my-14" style={{width: "min-content", "--dm-align-self": "center"}}>
+                <div className="text-64 text-color weight-900 ws-preserve" >nossaflex. db</div>
+                <div className="weight-200 text-24 text-color">Welcome, Josh</div>
+            </div>
             <table className="rounded-5 align-start w-full mt-64">
                 
                     <th className="weight-900 text-18 text-color text-left">roll</th>
