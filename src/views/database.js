@@ -1,9 +1,9 @@
 
 import React from "react";
-import Button from "../components/buttons";
+//import Button from "../components/buttons";
 import "../styles/colors.css";
 import "../styles/database.css";
-import useMethods from 'use-methods';
+//import useMethods from 'use-methods';
 
 const app = {
 	initialState: {
