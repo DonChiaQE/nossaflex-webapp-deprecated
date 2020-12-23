@@ -3,6 +3,8 @@ import { useAuth } from '../context/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
 import Buttons from "../components/buttons"
 import { signInWithGoogle } from '../firebase';
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
 export default function Login() {
 
@@ -12,6 +14,8 @@ export default function Login() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const history = useHistory()
+
+  const provider = new firebase.auth.GoogleAuthProvider();
 
   async function handleSubmit(e) {
       e.preventDefault() 
@@ -34,14 +38,14 @@ export default function Login() {
     try {
         setError('')
         setLoading(true)
-        await loginGoogle(emailRef.current.value, passwordRef.current.value)
+        await firebase.auth().signInWithPopup(provider)
         history.push('/')
     } catch {
         setError("Failed to sign in")
     }
 
     setLoading(false)
-} 
+  } 
 
   return (
     
@@ -72,7 +76,7 @@ export default function Login() {
         <form onSubmit={handleSubmit}>
         <Buttons buttonText="log in." highlightColor="var(--pink-highlight)" />
         </form>
-        <form onSubmit={signInWithGoogle}>
+        <form onSubmit={handleGoogleSubmit}>
         <Buttons
           buttonText="log in with google."
           highlightColor="var(--blue-highlight)"
