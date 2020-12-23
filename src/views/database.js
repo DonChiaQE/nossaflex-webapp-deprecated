@@ -1,8 +1,10 @@
 import "../styles/colors.css";
 import "../styles/database.css";
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useAuth } from '../context/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
 export default function Database() {
     const [error, setError] = useState("")
@@ -19,6 +21,7 @@ export default function Database() {
             setError("failed to log out")
         } 
     }
+
     return (
         <div className="vstack background grid-color space-8 container ">
             <div className="vstack align-start w-full my-14" style={{width: "min-content", "--dm-align-self": "center"}}>
@@ -30,7 +33,7 @@ export default function Database() {
             </div>
             <table className="rounded-5 align-start w-full mt-64">
                 
-                    <th className="weight-900 text-18 text-color text-left">roll</th>
+                    <th className="weight-900 text-18 text-color text-left">rolls</th>
                     <th className="weight-900 text-18 text-color text-left">camera</th>
                     <th className="weight-900 text-18 text-color text-left">film stock</th>
                     <th className="weight-900 text-18 text-color text-left">format</th>
