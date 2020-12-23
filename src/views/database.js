@@ -1,24 +1,32 @@
-
-import React from "react";
-//import Button from "../components/buttons";
 import "../styles/colors.css";
 import "../styles/database.css";
-//import useMethods from 'use-methods';
+import React, { useState } from 'react'
+import { useAuth } from '../context/AuthContext'
+import { Link, useHistory } from 'react-router-dom'
 
-const app = {
-	initialState: {
-		email: "",
-		password: "",
-	},
-	
-}
+export default function Database() {
+    const [error, setError] = useState("")
+    const { currentUser, logout } = useAuth()
+    const history = useHistory()
 
-function Database() {
+    async function handleLogout() {
+        setError('')
+
+        try {
+            await logout()
+            history.push('/login')
+        } catch {
+            setError("failed to log out")
+        } 
+    }
     return (
         <div className="vstack background grid-color space-8 container ">
             <div className="vstack align-start w-full my-14" style={{width: "min-content", "--dm-align-self": "center"}}>
                 <div className="text-64 text-color weight-900 ws-preserve" >nossaflex. db</div>
-                <div className="weight-200 text-24 text-color">Welcome, Josh</div>
+                <div className="hstack">
+                <div className="weight-200 text-24 text-color">Welcome, {currentUser.displayName}</div>
+                <button onClick={handleLogout}>Log Out</button>
+                </div>
             </div>
             <table className="rounded-5 align-start w-full mt-64">
                 
@@ -51,5 +59,3 @@ function Database() {
             </div>
 	)
 }
-
-export default Database;
