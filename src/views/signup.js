@@ -1,7 +1,7 @@
 import Buttons from "../components/buttons";
 import "../styles/colors.css";
 import "../styles/login.css";
-import React, {useRef, useState} from 'react'
+import React, {useRef, useState, reload} from 'react'
 import { useAuth } from '../context/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
 import firebase from 'firebase/app';
@@ -38,7 +38,7 @@ export default function SignUp() {
         try {
             setError('')
             setLoading(true)
-            await signup(emailRef.current.value, passwordRef.current.value)
+            await signup(emailRef.current.value, passwordRef.current.value (firstName.current.value + "" + lastName.current.value) )
             history.push('/')
         } catch {
             setError("Failed to create an account")
@@ -58,7 +58,7 @@ export default function SignUp() {
       try {
           setError('')
           setLoading(true)
-          await signup(emailRef.current.value, passwordRef.current.value)
+          await signup(emailRefMd.current.value, passwordRefMd.current.value, (firstNameMd.current.value + "" + lastNameMd.current.value) )
           history.push('/')
       } catch {
           setError("Failed to create an account")
